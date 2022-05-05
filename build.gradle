@@ -1,0 +1,57 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.cricinfo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE'
+    implementation 'junit:junit:4.13.1'
+    implementation 'junit:junit:4.13.1'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.7'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.2'
+// https://mvnrepository.com/artifact/org.webjars/webjars-locator
+    implementation 'org.webjars:webjars-locator:0.45'
+    // https://mvnrepository.com/artifact/org.webjars/jquery
+    implementation 'org.webjars:jquery:3.6.0'
+// https://mvnrepository.com/artifact/org.webjars/bootstrap
+    implementation 'org.webjars:bootstrap:4.5.3'
+// https://mvnrepository.com/artifact/com.github.darrachequesne/spring-data-jpa-datatables
+    implementation 'com.github.darrachequesne:spring-data-jpa-datatables:5.0.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.4'
+
+
+// https://mvnrepository.com/artifact/com.h2database/h2
+    testImplementation 'com.h2database:h2:2.1.212'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
